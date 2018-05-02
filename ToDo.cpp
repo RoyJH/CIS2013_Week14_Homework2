@@ -1,37 +1,38 @@
-#include "ToDo.h"
-
+#include "todo.h"
 using namespace std;
 
-ToDo::ToDo(){
-	ToDo(5);
-}
-
-ToDo::ToDo(int len){
+todo::todo(int len){
 	length = len;
 	list = new string[length];
 }
-
-ToDo::~ToDo(){
+todo::~todo(){
 	delete [] list;
 }
-		
-// Add an item to list
-void ToDo::add(string item){
+todo::todo(){
+	todo(5);
+}
+
+	//Adds an item to list
+void todo::add(string item){
 	if(next < length){
 		list[next] = item;
 		next++;
 	}
-}
-
-// Finish the last thing in list
-void ToDo::done(){
+	else cout << "List is full. Must remove an entry first." << endl;
+}	
+	//Finish the last thing in list
+void todo::done(){
+	cout << "Which task has been completed?";
+	cin>> entry;
+	for(int j=entry;j<todo::length;j++){
+	list [j] = list [j+1] ;}
 	next--;
-	list[next] = "";
+	list[next]="";
 }
-
-// Print list
-void ToDo::print(){
-	for(int i=0;i<next;i++){
-		cout << " " << i << " " << list[i] << endl;
-	}
+		
+	//Print list
+void todo::print(){
+	for (int i=0;i<next;i++){
+		cout << " * " << list[i] << endl;
+		}
 }

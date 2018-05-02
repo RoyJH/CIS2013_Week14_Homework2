@@ -1,32 +1,30 @@
 #include <iostream>
-#include <string>
+#include <cstring>
 using namespace std;
 
-// g++ main.cpp ToDo.cpp
-class ToDo {
+class todo {
 	private:
-		
+	
 		string *list;
+		int entry = 0;
 		int length = 0;
 		int next = 0;
-	
+		
 	public:
 	
-		// Default Constructor
-		ToDo();
-	
-		// Create list of length len
-		ToDo(int len);
+		//Default Constructor
+		todo();
+		//Create list of length len
+		todo(int l);
 		
-		// Destroy out list
-		~ToDo();
-		
-		// Add an item to list
+		//Destroy out list
+		~todo();
+		//Adds an item to list
 		void add(string item);
 		
-		// Finish the last thing in list
+		//Finish the last thing in list
 		void done();
 		
-		// Print list
+		//Print list
 		void print();
 };
